@@ -52,12 +52,3 @@ if __name__ == '__main__':
     l2.next.next = ListNode(4)
 
     print(Solution().addTwoNumbers(l1, l2))
-
-
-
-
-
-
-
-
-
