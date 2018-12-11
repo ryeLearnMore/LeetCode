@@ -7,6 +7,8 @@ class Solution:
         :type str: str
         :rtype: int
         """
+        # strip()方法介绍
+        # http://www.runoob.com/python/att-string-strip.html
         str = str.strip()
         if str == "":
             return 0
@@ -23,8 +25,9 @@ class Solution:
         sum = 0
         for i in str:
             if i >= '0' and i <= '9':
-                # sum = int(i) * 10 + sum
-                sum = ord(i) - ord('0') + sum * 10
+            	# ord()函数的应用
+                # http://www.runoob.com/python/python-func-ord.html
+                sum = ord(i) - ord('0') + sum * 10  # 字符串转化为数字方法
             else:
                 break
         sum = sum * sign
