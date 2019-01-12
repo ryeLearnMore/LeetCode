@@ -14,7 +14,7 @@ class Solution:
             length = len(t)
             while t == s[:length]:
                 num += n
-                s = s[length:]
+                s = s[length:] #此处不能用s.lstrip(t)。因为如果为'III'则查找到'I'时会把后面的两个'I'都删除掉
 
         return num
 
