@@ -31,6 +31,7 @@ class Solution(object):
 
 方法：
     用一维数组代替了二维数据，涉及真的很巧妙，需要学习。
+参考链接：https://github.com/ryeLearnMore/awesome-algorithm/blob/master/docs/Leetcode_Solutions/Python/062._unique_paths.md
 '''
 class Solution1:
     def uniquePaths(self, m, n):
