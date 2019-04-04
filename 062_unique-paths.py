@@ -48,6 +48,24 @@ class Solution1:
             for j in range(1,n):
                 dp[j] += dp[j-1]
         return dp[n-1]
+# ----------------19.4.4----------------
+# 空间复杂度为O(n^2)
+class Solution2(object):
+    def uniquePaths(self, m, n):
+        """
+        :type m: int
+        :type n: int
+        :rtype: int
+        """
+        if m < 1 or n < 1:
+            return 0
+        dp = [[1 for i in range(m)] for j in range(n)]
+
+        for i in range(1, n):
+            for j in range(1, m):
+                dp[i][j] = dp[i - 1][j] + dp[i][j - 1] # 一维的关键语句：dp[j] += dp[j-1]
+
+        return dp[-1][-1]
 
 if __name__ == '__main__':
     m = 7
