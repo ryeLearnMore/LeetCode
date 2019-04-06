@@ -21,6 +21,14 @@ tips：
         - 如果10 <= int(s[i-1:i+1]) <= 26, 那么dp[i]的组合可以为dp[i-2]的所有组合方式后面都加上s[i-1:i+1]
         - 如果int(s[i-1:i+1]) < 10 或者 int(s[i-1:i+1]) > 26，那么dp[i]在这种情况下没有符合的组合方式
 '''
+
+# -------------------------------19.4.6--------------------------------
+'''
+看这三个参考链接就能看懂，结合爬楼梯那道题
+https://www.cnblogs.com/racaljk/p/8454243.html
+https://blog.csdn.net/qqxx6661/article/details/78389583
+https://github.com/apachecn/awesome-algorithm/blob/master/docs/Leetcode_Solutions/Python/0091._decode_ways.md
+'''
 class Solution(object):
     def numDecodings(self, s):
         """
