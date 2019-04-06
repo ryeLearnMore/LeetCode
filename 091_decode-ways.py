@@ -29,6 +29,32 @@ https://www.cnblogs.com/racaljk/p/8454243.html
 https://blog.csdn.net/qqxx6661/article/details/78389583
 https://github.com/apachecn/awesome-algorithm/blob/master/docs/Leetcode_Solutions/Python/0091._decode_ways.md
 '''
+# 个人觉得下面这段代码更好理解
+class Solution:
+    def numDecodings(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        dp = [0] * (len(s)+1)
+        #边界情况
+        if len(s) == 0 or s[0] == '0':
+            return 0
+       
+        dp[0] = 1
+        dp[1] = 1
+        for i in range(2,len(s) + 1):
+            if s[i-1] > '0':  #若s[i-1]不为0,则s[i-1]可单独存在,s[i]可由s[i-1]走1步到达
+                dp[i] = dp[i-1]
+            if s[i-2] == '1' or (s[i-2] == '2' and s[i-1] <= '6') : #承接上面，若s[i-2]*10+s[i-1]<=26,则s[i]可由s[i-2]走2步到达
+                dp[i] += dp[i-2]
+        return dp[len(s)]
+# --------------------- 
+# 作者：Yun_Self 
+# 来源：CSDN 
+# 原文：https://blog.csdn.net/u014626513/article/details/81483008 
+# 版权声明：本文为博主原创文章，转载请附上博文链接！
+# ---------------------------------------------19.4.6------------------------
 class Solution(object):
     def numDecodings(self, s):
         """
