@@ -22,7 +22,24 @@ class Solution1(object):
             index = nums.index(ret)
             if ret in nums and index != k:
                 return [k, index]
-
+# ---------------------------19.4.7-----------------------------
+# 感觉下面这段代码更好，更容易理解
+class Solution2(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        lookup = {}
+        for i, num in enumerate(nums):
+            if target - num in lookup:
+                return [lookup[target-num], i]
+            else:
+                # 向字典中添加新的键值对
+                # 参考链接：http://www.runoob.com/python/python-dictionary.html
+                lookup[num] = i
+            
 if __name__ == "__main__":
     s = Solution1()
     l = s.twoSum([3,2,4], 6)
