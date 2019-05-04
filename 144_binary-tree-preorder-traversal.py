@@ -68,3 +68,34 @@ class Solution2(object):
             return a
         self.front(root,a)
         return a
+
+# ------------------中序遍历（迭代）--------------------
+# 参考链接：https://github.com/allenwangyuan/coding_in_Python/blob/master/2_2_1_3_%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86.py
+def inOrder2(pRoot):
+    node = pRoot.left
+    stack = [pRoot]
+    while node:
+        stack.append(node)
+        node = node.left
+    while stack:
+        node = stack.pop()
+        print node.val
+        if node.right:
+            node = node.right
+            while node:
+                stack.append(node)
+                node = node.left
+
+def inOrder2_1(pRoot):
+    node = pRoot
+    stack = []
+    while True:
+        while node:
+            stack.append(node)
+            node = node.left
+        if stack:
+            node = stack.pop()
+            print node.val
+            node = node.right
+        else:
+            break
