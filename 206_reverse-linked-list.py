@@ -38,3 +38,9 @@ if __name__ == '__main__':
     l1.next.next.next.next.next = ListNode(0)
 
     print(Solution().reverseList(l1))
+    
+# ------------------------------19.6.22-----------
+'''
+又在牛客网的“剑指offer”上做了一遍，结果不出意料的忘了。。。
+要记住这个模式啊！！！
+'''
